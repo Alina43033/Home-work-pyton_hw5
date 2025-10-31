@@ -6,5 +6,5 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 
 driver.get("http://uitestingplayground.com/classattr")
 
-button = driver.find_element_by_xpath('//button[contains(@class, "btn-primary")]')
+button = driver.find_element(By.XPATH, '//button[contains(@class, "btn-primary")]')
 button.click()
