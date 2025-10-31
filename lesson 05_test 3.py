@@ -1,15 +1,19 @@
+from time import sleep
+
 from selenium import webdriver
+
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 
 driver = webdriver.Firefox()
-driver.get("https://the-internet.herokuapp.com/login")
 
-username_input = driver.find_element(By.XPATH,'//input[@id="username"]')
-username_input.send_keys("tomsmith")
+driver.get('http://the-internet.herokuapp.com/inputs')
 
-password_input = driver.find_element(By.XPATH,'//input[@id="password"]')
-password_input.send_keys("SuperSecretPassword!")
+input_1 = driver.find_element(By.CSS_SELECTOR, 'input.["type="number"]')
 
-button = driver.find_element(By.CSS_SELECTOR, "button.radius")
-button.click()
+input_1.send_keys('1000')
+
+input_1.clear()
+
+input_1.send_keys('999')
+
+sleep(2)
