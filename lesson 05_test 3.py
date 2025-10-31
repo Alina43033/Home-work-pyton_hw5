@@ -1,20 +1,15 @@
 from selenium import webdriver
-from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-browser = webdriver.Firefox()
+driver = webdriver.Firefox()
+driver.get("https://the-internet.herokuapp.com/login")
 
-browser.get("http://the-internet.herokuapp.com/inputs")
+username_input = driver.find_element(By.XPATH,'//input[@id="username"]')
+username_input.send_keys("tomsmith")
 
-element = browser.find_element(By.CSS_SELECTOR, "#numder")
+password_input = driver.find_element(By.XPATH,'//input[@id="password"]')
+password_input.send_keys("SuperSecretPassword!")
 
-search_input.send_keys("Sky")
-
-numder_input.clear()
-
-element = browser.find_element(By.CSS_SELECTOR, "#numder")
-
-search_input.send_keys("Pro")
-
-quit()
+button = driver.find_element(By.CSS_SELECTOR, "button.radius")
+button.click()
