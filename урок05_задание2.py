@@ -6,5 +6,5 @@ driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())
 
 driver.get("http://the-internet.herokuapp.com/inputs")
 
-button = driver.find_element_by_xpath('btn btn-primary')
+button = driver.find_element(By.XPATH, '//button[contains(@class, "btn-primary")]')
 button.click()
