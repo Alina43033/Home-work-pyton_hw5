@@ -1,10 +1,18 @@
+from time import sleep
 from selenium import webdriver
+
 from selenium.webdriver.chrome.service import Service as ChromeService
+
 from webdriver_manager.chrome import ChromeDriverManager
 
-driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+from selenium.webdriver.common.by import By
 
-driver.get("http://the-internet.herokuapp.com/inputs")
+service = ChromeService(ChromeDriverManager().install())
+browser = webdriver.Chrome()
 
-button = driver.find_element(By.XPATH, '//button[contains(@class, "btn-primary")]')
+browser.get('http://uitestingplayground.com/classattr')
+
+button = browser.find_element(By.CLASS_NAME, 'btn-primary')
+
 button.click()
+sleep(15)
