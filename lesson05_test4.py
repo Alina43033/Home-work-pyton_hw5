@@ -1,12 +1,22 @@
+from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 
-# Указываем полный путь к geckodriver.exe на вашем ПК.
 driver = webdriver.Firefox()
-driver.get("http://the-internet.herokuapp.com/entry_ad")
 
-close_button = WebDriverWait(driver, 10).until
-EC.element_to_be_clickable((By.CLASS_NAME, "close"))
-)
+driver.get("http://the-internet.herokuapp.com/login")
+
+element_login = driver.find_element(By.CSS_SELECTOR, "#username")
+
+element_login.send_keys("tomsmith")
+
+element_parol = driver.find_element(By.CSS_SELECTOR, "#password")
+
+element_parol.send_keys(" SuperSecretPassword!")
+
+check_input = driver.driver.find_element(By.CLASS_NAME, "radius").click()
+
+# "#flash"
+
+driver.quit()
