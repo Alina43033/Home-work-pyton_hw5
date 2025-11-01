@@ -16,4 +16,4 @@ input_1.clear()
 
 input_1.send_keys('999')
 
-sleep(2)
+
