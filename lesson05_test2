@@ -15,4 +15,4 @@ browser.get('http://uitestingplayground.com/classattr')
 button = browser.find_element(By.CLASS_NAME, 'btn-primary')
 
 button.click()
-sleep(15)
+
